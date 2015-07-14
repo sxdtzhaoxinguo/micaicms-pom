@@ -1,0 +1,583 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.micaicms</groupId>
+	<artifactId>micaicms-pom</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+
+	<name>MICAICMS POM</name>
+	<description>MICAICMS ROOT POM</description>
+
+	<properties>
+		<!-- 前端 Java开发工具 -->
+		<!-- 1.Servlet -->
+		<servlet-api.version>3.0.1</servlet-api.version>
+		<!-- 2.Jsp -->
+		<jsp-api.version>2.2</jsp-api.version>
+		<!-- 3.Jstl -->
+		<jstl.version>1.2</jstl.version>
+		<standard.version>1.1.2</standard.version>
+
+		<!-- 4.Echart-java -->
+		<ECharts.version>2.1.8.3</ECharts.version>
+		<!-- 5.Freemarker -->
+		<freemarker.version>2.3.2</freemarker.version>
+		<!-- 6.Json -->
+		<jackson.version>1.9.13</jackson.version>
+		<jackson-databind.version>2.5.1</jackson-databind.version>
+
+		<!-- Spring -->
+		<spring-framework.version>4.0.6.RELEASE</spring-framework.version>
+
+		<!-- 面向切面工具 -->
+		<aspectjweaver.version>1.8.1</aspectjweaver.version>
+
+		<!-- 文本处理工具 -->
+		<!-- 1.Dom4j -->
+		<dom4j.version>1.6.1</dom4j.version>
+		<!-- 2.Poi -->
+		<poi.version>3.10-FINAL</poi.version>
+		<!-- 3.IText -->
+		<itext.version>5.5.4</itext.version>
+
+		<!-- 数据库开发工具 -->
+		<!-- 1.tomcat-jdbc -->
+		<tomcat-jdbc.version>7.0.52</tomcat-jdbc.version>
+		<!-- 2.Mybatis -->
+		<mybatis.version>3.2.2</mybatis.version>
+		<mybatis-paginator.version>1.2.15</mybatis-paginator.version>
+		<mybatis-spring.version>1.2.2</mybatis-spring.version>
+		<!-- 3.Mysql connector -->
+		<mysql-connector.version>5.1.30</mysql-connector.version>
+
+		<!-- 日志工具 -->
+		<!-- 1.slf4j -->
+		<slf4j.version>1.7.7</slf4j.version>
+		<!-- 2.log4j -->
+		<log4j.version>2.1</log4j.version>
+
+		<!-- Quartz -->
+		<quartz.version>2.1.7</quartz.version>
+		<!-- Activiti -->
+		<activiti.version>5.16.3</activiti.version>
+		<!-- cas_client -->
+		<cas_client.version>3.3.0</cas_client.version>
+		<!-- Test -->
+		<junit.version>4.10</junit.version>
+		<!-- JDK -->
+		<jdk.version>1.8</jdk.version>
+
+		<!-- 后台验证工具 -->
+		<!-- 1.hibernate-validator -->
+		<hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
+
+		<!-- 文件上传工具 -->
+		<!-- 1.commons-fileupload -->
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+
+		<!-- 润乾报表工具 -->
+		<!-- 1.runqian_report -->
+		<runqian.version>4.5.0-RELEASE</runqian.version>
+
+
+		<!-- 1.ckeditor -->
+		<ckeditor.version>4.4.7</ckeditor.version>
+		<!-- 2.bootstrap -->
+		<bootstrap.version>3.3.0</bootstrap.version>
+		<!-- 3.echarts -->
+		<echarts.version>2.1.10</echarts.version>
+		<!-- 4.jquery -->
+		<jquery.version>1.11.1</jquery.version>
+		<!-- 5.jqwidgets -->
+		<jqwidgets.version>3.8.0</jqwidgets.version>
+		<jquery-ui.version>1.11.1</jquery-ui.version>
+		<jquery-form.version>3.51</jquery-form.version>
+
+		<!-- 校验工具 -->
+		<jquery.validate.js.version>1.13.1</jquery.validate.js.version>
+		<!-- 文件上传工具 -->
+		<jquery-file-upload.version>9.8.1</jquery-file-upload.version>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- 前端 Java开发工具 -->
+			<!-- 1.Servlet -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${servlet-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- 2.Jsp -->
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>${jsp-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- 3.jstl -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>standard</artifactId>
+				<version>${standard.version}</version>
+			</dependency>
+			<!-- 4.spring-mvc -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+			<!-- 5.Echart-java -->
+			<dependency>
+				<groupId>com.github.abel533</groupId>
+				<artifactId>ECharts</artifactId>
+				<version>${ECharts.version}</version>
+			</dependency>
+			<!-- 6.Freemarker -->
+			<dependency>
+				<groupId>freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>${freemarker.version}</version>
+			</dependency>
+			<!-- 7.Json -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson-databind.version}</version>
+			</dependency>
+
+			<!-- Spring and Transactions -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectjweaver.version}</version>
+			</dependency>
+
+			<!-- 文本处理 -->
+			<!-- 1.Dom4j -->
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>${dom4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${spring-framework.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-lang</groupId>
+						<artifactId>commons-lang</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- 2.Poi -->
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<!-- 3.IText -->
+			<dependency>
+				<groupId>com.itextpdf</groupId>
+				<artifactId>itextpdf</artifactId>
+				<version>${itext.version}</version>
+			</dependency>
+
+			<!-- 数据库开发 -->
+			<!-- 1.数据库连接池 -->
+			<dependency>
+				<groupId>org.apache.tomcat</groupId>
+				<artifactId>tomcat-jdbc</artifactId>
+				<version>${tomcat-jdbc.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<!-- 2.mybatis -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			<!-- 3.mybatis分页插件 -->
+			<dependency>
+				<groupId>com.github.miemiedev</groupId>
+				<artifactId>mybatis-paginator</artifactId>
+				<version>${mybatis-paginator.version}</version>
+			</dependency>
+			<!-- 4.mybatis与spring集成 -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis-spring.version}</version>
+			</dependency>
+			<!-- 5.Mysql 数据库驱动 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql-connector.version}</version>
+			</dependency>
+			<!-- Quartz -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			<!-- CAS -->
+			<dependency>
+				<groupId>org.jasig.cas.client</groupId>
+				<artifactId>cas-client-core</artifactId>
+				<version>${cas_client.version}</version>
+			</dependency>
+			<!-- Activiti -->
+			<dependency>
+				<groupId>org.activiti</groupId>
+				<artifactId>activiti-engine</artifactId>
+				<version>${activiti.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.activiti</groupId>
+				<artifactId>activiti-spring</artifactId>
+				<version>${activiti.version}</version>
+			</dependency>
+
+			<!-- 日志工具 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-web</artifactId>
+				<version>${log4j.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<!-- Test Artifacts -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring-framework.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- 后台验证工具 -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate-validator.version}</version>
+			</dependency>
+
+			<!-- 上传附件工具 -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
+
+			<!-- 润乾报表工具 -->
+			<dependency>
+				<groupId>com.runqian</groupId>
+				<artifactId>ruanqian_report</artifactId>
+				<version>${runqian.version}</version>
+				<type>pom</type>
+			</dependency>
+
+			<!-- 1.ckeditor -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>ckeditor</artifactId>
+				<version>${ckeditor.version}</version>
+			</dependency>
+			<!-- 2.bootstrap -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>bootstrap</artifactId>
+				<version>${bootstrap.version}</version>
+			</dependency>
+			<!-- 3.echarts -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>echarts</artifactId>
+				<version>${echarts.version}</version>
+			</dependency>
+			<!-- 4.jquery -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery</artifactId>
+				<version>${jquery.version}</version>
+			</dependency>
+			<!-- 5.jqwidgets -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jqwidgets</artifactId>
+				<version>${jqwidgets.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery-ui</artifactId>
+				<version>${jquery-ui.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery-form</artifactId>
+				<version>${jquery-form.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery.validate.js</artifactId>
+				<version>${jquery.validate.js.version}</version>
+			</dependency>
+
+			<!-- 文件操作工具 -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery-file-upload</artifactId>
+				<version>${jquery-file-upload.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<additionalProjectnatures>
+							<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+						</additionalProjectnatures>
+						<additionalBuildcommands>
+							<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+						</additionalBuildcommands>
+						<downloadSources>true</downloadSources>
+						<downloadJavadocs>true</downloadJavadocs>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<source>${jdk.version}</source>
+						<target>${jdk.version}</target>
+						<showWarnings>true</showWarnings>
+						<showDeprecation>true</showDeprecation>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.18.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>2.18.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-verifier-plugin</artifactId>
+					<version>1.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.mybatis.generator</groupId>
+					<artifactId>mybatis-generator-maven-plugin</artifactId>
+					<version>1.3.0</version>
+					<configuration>
+						<verbose>true</verbose>
+						<overwrite>true</overwrite>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-report-plugin</artifactId>
+					<version>2.18.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.5.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.10</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>1.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.cargo</groupId>
+					<artifactId>cargo-maven2-plugin</artifactId>
+					<version>1.4.12</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>2.14</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.puppycrawl.tools</groupId>
+							<artifactId>checkstyle</artifactId>
+							<version>6.0</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>findbugs-maven-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>1.9.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.2.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
+					<configuration>
+						<charset>UTF-8</charset>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<repositories>
+		<repository>
+			<id>micaicms</id>
+			<name>Micaicms Repositories</name>
+			<url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>Micaicms</id>
+			<name>Micaicms Plugin Repositories</name>
+			<url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Micaicms Releases</name>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Micaicms Releases</name>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
