@@ -326,14 +326,6 @@
 				<version>${commons-fileupload.version}</version>
 			</dependency>
 
-			<!-- 润乾报表工具 -->
-			<dependency>
-				<groupId>com.runqian</groupId>
-				<artifactId>ruanqian_report</artifactId>
-				<version>${runqian.version}</version>
-				<type>pom</type>
-			</dependency>
-
 			<!-- 1.ckeditor -->
 			<dependency>
 				<groupId>org.webjars</groupId>
